@@ -4,7 +4,8 @@
   "description": "Univeral JS application utilizing Hot Module Reloading, Server Side Rendering, Code Splitting with React, Redux, React Router 4 and a heroku like deploy setup with Dokku.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "development": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js",
+    "production": "NODE_PATH=./src NODE_ENV=production node ./src/server/server.babel.js"
   },
   "keywords": [
     "react",
@@ -17,5 +18,17 @@
     "webpack"
   ],
   "author": "Alexander J Ray <alexjamesray@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.24.0"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "express": "^4.15.2"
+  }
 }
