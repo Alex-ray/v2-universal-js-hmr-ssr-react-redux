@@ -3,9 +3,25 @@ import express from 'express';
 import colors  from 'colors';
 import path    from 'path';
 
+// Server Side Rendering
+import {
+  renderPage,
+  renderDevPage
+} from './ssr.js';
+
 const PROD = process.env.NODE_ENV === 'production';
 
 const app = express();
+
+
+if (PROD) {
+
+} else {
+  const HMR = require('./hmr.js');
+  // Hot Module Reloading
+  HMR(app);
+  app.get('*', renderDevPage);
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
