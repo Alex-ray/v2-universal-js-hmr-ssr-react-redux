@@ -1,0 +1,65 @@
+.counterContainer {
+  position: relative;
+}
+
+
+.counter {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  border: solid 10px white;
+  border-radius: 200px;
+  color: white;
+}
+
+.button {
+  display: inline-block;
+  display: flex;
+  font-size: 3em;
+  line-height: 50px;
+  justify-content: center;
+  vertical-align: center;
+  color: white;
+  background-color: #30B661;
+  border: solid 1px #0F9D58;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.positive {
+  background-color: #B1DDCC;
+  border: solid 7px #7EC6AB;
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  margin-top: -25px;
+  font-size: 2.5em
+}
+
+.positive:hover {
+  /*background-color: #DEF0EA;*/
+  border-color: #B1DDCC;
+}
+
+.negative {
+  background-color: #F48F94;
+  border: solid 7px #F27D83;
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  margin-top: -25px;
+  line-height: 45px;
+}
+
+.negative:hover {
+  border-color: #F48F94;
+}

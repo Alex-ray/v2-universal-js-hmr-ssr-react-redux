@@ -1,0 +1,35 @@
+
+.home {
+  max-width: 750px;
+}
+
+.center {
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 3em;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 15px 40px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #E4E7EB;
+  background-color: #F48F94;
+  border: solid 7px #F27D83;
+  border-radius: 100px;
+  text-decoration: none;
+  margin-top: 50px;
+
+}
+
+.button:hover {
+  border-color: #F48F94;
+}

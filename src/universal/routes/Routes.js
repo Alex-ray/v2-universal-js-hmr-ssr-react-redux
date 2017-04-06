@@ -3,9 +3,10 @@ import React, {Component, PropTypes} from  'react';
 import {Route, Redirect} from 'react-router';
 
 // Routes
-// import * as Routes from 'universal/routes/index.js';
+import * as RouteMap from 'universal/routes/index.js';
 
 // Containers
+import AppContainer from 'universal/containers/App/AppContainer.js';
 // import PrivateRouteContainer from 'universal/containers/PrivateRoute/PrivateRouteContainer.js';
 
 // Styles
@@ -20,9 +21,12 @@ class Routes extends Component {
     } = this.props;
 
     return (
-      <div className={background}>
-        <Route exact location={location} path='/' render={() => {return (<div>HELLO WORLD!</div>);}} />
-      </div>
+      <AppContainer>
+        <div>
+          <Route exact location={location} path='/' component={RouteMap.Home} />
+          <Route exact location={location} path='/counter' component={RouteMap.Counter} />
+        </div>
+      </AppContainer>
     );
   }
 }

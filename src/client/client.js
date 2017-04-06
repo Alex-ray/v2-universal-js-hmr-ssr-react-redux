@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 
 // Components
-import {AppContainer as App} from './containers/AppContainer.js';
+import App from './containers/AppContainer.js';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -13,15 +13,23 @@ import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
 const store = createStore(history);
 
-render(
-  <AppContainer>
-    <Provider store={store}>
-      <App history={history} />
-    </Provider>
-  </AppContainer>,
-  document.getElementById('root')
-);
+const rootEl = document.getElementById('root')
+const renderApp = (Component) => {
+    render(
+      <AppContainer>
+        <Provider store={store}>
+          <Component history={history} />
+        </Provider>
+      </AppContainer>,
+      rootEl
+    );
+}
+
+renderApp(App);
 
 if (module.hot) {
-  module.hot.accept();
+  module.hot.accept('./containers/AppContainer.js', () => {
+    const nextApp = require('./containers/AppContainer.js');
+    renderApp(nextApp);
+  });
 }
