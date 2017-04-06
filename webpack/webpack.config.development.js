@@ -55,7 +55,14 @@ export default {
   },
   module: {
     loaders: [
-      {test: /\.(png|j|jpeg|gif|svg|woff|woff2)$/, loader: 'url-loader?limit=10000'},
+      {test: /\.(png|j|jpeg|gif|svg|woff|woff2)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }
+      },
 
       // Javascript
       {test: /\.js$/,
@@ -65,7 +72,7 @@ export default {
       },
 
       // CSS
-      {test: /\.css|less$/,
+      {test: /\.css$/,
        include: clientInclude,
        use: [
          {loader: 'style-loader'},
@@ -74,10 +81,8 @@ export default {
             root: src,
             modules: true,
             importLoaders: 1,
-            localIdentName: '[path][name]-[local]'
-          }},
-          {loader: 'less-loader'},
-          {loader: 'postcss-loader'}
+            localIdentName: '[name]_[local]_[hash:base64:5]'
+          }}
        ]
       }
     ]

@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "development": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js",
-    "production": "NODE_PATH=./src NODE_ENV=production node ./src/server/server.babel.js"
+    "production": "NODE_PATH=./src NODE_ENV=production node ./src/server/server.babel.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:server": "NODE_ENV=production webpack --config ./webpack/server.babel.js",
+    "build:client": "NODE_ENV=production webpack --config ./webpack/production.babel.js"
   },
   "keywords": [
     "react",
@@ -20,6 +23,7 @@
   "author": "Alexander J Ray <alexjamesray@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
     "autoprefixer": "^6.7.7",
     "babel-loader": "^6.4.1",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -30,6 +34,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.24.0",
     "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
     "less-loader": "^4.0.3",
     "postcss-loader": "^1.3.3",
     "react-hot-loader": "^3.0.0-beta.6",

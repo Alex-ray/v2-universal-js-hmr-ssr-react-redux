@@ -13,9 +13,9 @@ const PROD = process.env.NODE_ENV === 'production';
 
 const app = express();
 
-
 if (PROD) {
-
+  app.use('/static', express.static('build'));
+  app.get('*', renderPage);
 } else {
   const HMR = require('./hmr.js');
   // Hot Module Reloading
