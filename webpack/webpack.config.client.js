@@ -51,7 +51,7 @@ export default {
   plugins: [
    new webpack.NamedModulesPlugin(),
    new ExtractTextPlugin('[name].css'),
-   new webpack.NormalModuleReplacementPlugin(/\.\.\/routes\/index/, '../routes/async'),
+   new webpack.NormalModuleReplacementPlugin(/\.\.\/routes\/static/, '../routes/async'),
    new webpack.optimize.CommonsChunkPlugin({
      names: ['vendor', 'manifest'],
      minChunks: Infinity

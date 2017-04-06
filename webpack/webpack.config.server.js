@@ -32,7 +32,7 @@ export default {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new ExtractTextPlugin('[name].css'),
-    new webpack.NormalModuleReplacementPlugin(/\.\.\/routes\/index/, '../routes/async'),
+    new webpack.NormalModuleReplacementPlugin(/\.\.\/routes\/static/, '../routes/async'),
     new webpack.optimize.UglifyJsPlugin({compressor: {warnings: false}}),
     new webpack.optimize.LimitChunkCountPlugin({maxChunks: 1}),
     new webpack.DefinePlugin({
